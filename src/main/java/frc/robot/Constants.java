@@ -1,19 +1,30 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot;
 
-/**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
- * globally (i.e. public static). Do not put anything functional in this class.
- *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
- * constants are needed, to reduce verbosity.
- */
+import edu.wpi.first.math.geometry.*;
+import edu.wpi.first.math.trajectory.TrapezoidProfile;
+import edu.wpi.first.math.util.Units;
+
 public final class Constants {
-  public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
+  public static final class CAN {
+    public static final int FL_DRIVE=1, FL_TURN=2, FR_DRIVE=3, FR_TURN=4;
+    public static final int BL_DRIVE=5, BL_TURN=6, BR_DRIVE=7, BR_TURN=8;
+  }
+  public static final class DIO {
+    public static final int FL_ABS=0, FR_ABS=1, BL_ABS=2, BR_ABS=3;
+  }
+  public static final class Drive {
+    public static final double TRACK_WIDTH = Units.inchesToMeters(20);
+    public static final double WHEEL_BASE  = Units.inchesToMeters(20);
+    public static final double WHEEL_RADIUS= Units.inchesToMeters(2);
+    public static final double DRIVE_GEAR_RATIO=6.75;
+    public static final double TURN_GEAR_RATIO =12.8;
+    public static final double MAX_LINEAR_MPS  =4.0;
+    public static final double MAX_ANG_RADPS   =Math.PI;
+
+    public static final Translation2d FL_LOC= new Translation2d(+WHEEL_BASE/2, +TRACK_WIDTH/2);
+    public static final Translation2d FR_LOC= new Translation2d(+WHEEL_BASE/2, -TRACK_WIDTH/2);
+    public static final Translation2d BL_LOC= new Translation2d(-WHEEL_BASE/2, +TRACK_WIDTH/2);
+    public static final Translation2d BR_LOC= new Translation2d(-WHEEL_BASE/2, -TRACK_WIDTH/2);
+
   }
 }
