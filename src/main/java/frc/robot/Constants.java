@@ -27,4 +27,12 @@ public final class Constants {
     public static final Translation2d BR_LOC= new Translation2d(-WHEEL_BASE/2, -TRACK_WIDTH/2);
 
   }
+
+
+  public static final class Field {
+    public static final double FIELD_LENGTH=16.54, FIELD_WIDTH=8.21;
+    public static final Translation2d CENTER = new Translation2d(FIELD_LENGTH/2, FIELD_WIDTH/2);
+    public static final Pose2d B_RED  = new Pose2d(FIELD_LENGTH-1.0, FIELD_WIDTH/2, new Rotation2d(Math.PI));
+    public static final Pose2d B_BLUE = new Pose2d(1.0, FIELD_WIDTH/2, new Rotation2d(0));
+  }
 }
